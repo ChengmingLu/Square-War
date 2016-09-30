@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Hoosband : MonoBehaviour {
-
+public class Movable : MonoBehaviour {
+    public float speed;
 	// Use this for initialization
 	void Start () {
 	
@@ -12,7 +12,4 @@ public class Hoosband : MonoBehaviour {
 	void Update () {
 	
 	}
-    void OnMouseDown() {
-        Debug.Log("Click detected on " + gameObject);
-    }
 }

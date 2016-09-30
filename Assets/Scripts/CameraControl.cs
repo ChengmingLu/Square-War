@@ -4,10 +4,10 @@ using System.Collections;
 public class CameraControl : MonoBehaviour {
     float CameraThreshold = 2f;
     float CameraBoundary = 5f;
-    Camera cam;
+    //Camera cam;
     float speed = 2f;
     void Start () {
-        cam = GameObject.FindObjectOfType<Camera>();
+        //cam = GameObject.FindObjectOfType<Camera>();
 	}
 	// Update is called once per frame
 	void Update () {
