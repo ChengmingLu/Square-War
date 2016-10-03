@@ -12,7 +12,4 @@ public class Hoosband : MonoBehaviour {
 	void Update () {
 	
 	}
-    void OnMouseDown() {
-        Debug.Log("Click detected on " + gameObject);
-    }
 }

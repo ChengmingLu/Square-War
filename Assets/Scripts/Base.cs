@@ -14,9 +14,6 @@ public class Base : MonoBehaviour {
 	    
 	}
 
-    void OnMouseDown() {
-        Debug.Log("Click detected on " + gameObject);  
-    }
 
 
 }
