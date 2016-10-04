@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour {
-    public bool win;
-    public bool lose;
+public class Resource : MonoBehaviour {
+    public int resourceCount = 100;
 	// Use this for initialization
 	void Start () {
-        win = false;
-        lose = false;
+	    
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (resourceCount <= 0) {
+            Destroy(gameObject);
+        }
 	}
 }

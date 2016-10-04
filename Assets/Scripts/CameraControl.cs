@@ -32,7 +32,7 @@ public class CameraControl : MonoBehaviour {
             && transform.position.y >= -cameraBoundary) {
             transform.Translate(Vector3.down * speed * Time.deltaTime);  
         }
-        cameraFoV += Input.GetAxis("Mouse ScrollWheel") * scrollSensitivity;
+        cameraFoV -= Input.GetAxis("Mouse ScrollWheel") * scrollSensitivity;
         cameraFoV = Mathf.Clamp(cameraFoV, minCameraFoV, maxCameraFoV);
         cam.orthographicSize = cameraFoV;
 	}
