@@ -12,12 +12,17 @@ public class Movable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (Mathf.Abs(destination.x - gameObject.transform.position.x) >= moveThreshold.x || 
+        if (Mathf.Abs(destination.x - gameObject.transform.position.x) >= moveThreshold.x ||
             Mathf.Abs(destination.y - gameObject.transform.position.y) >= moveThreshold.y) {
             //Debug.Log(mousPos + " is mouse position:moving");
             Debug.Log("in movable: " + destination + " is object position:moving");
-            gameObject.transform.Translate(((destination - 
-                gameObject.transform.position) * speed * Time.deltaTime));
+            //gameObject.transform.Translate(((destination - 
+            //gameObject.transform.position) * speed * Time.deltaTime));
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(destination.x -
+                gameObject.transform.position.x, destination.y -
+                gameObject.transform.position.y) * speed;
+        } else {
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
         }
 	}
 }
