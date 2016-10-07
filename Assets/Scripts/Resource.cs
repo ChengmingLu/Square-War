@@ -14,4 +14,12 @@ public class Resource : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
+    void OnTriggerEnter2D(Collider2D collider) {
+        if (collider.gameObject.GetComponent<Wifoo>() && 
+            collider.gameObject.GetComponent<Wifoo>().canCollect) {
+            //Debug.Log("Wifoo touched me!!!!!");
+            resourceCount -= 5;
+            Debug.Log(resourceCount + "remaining");
+        } 
+    }
 }

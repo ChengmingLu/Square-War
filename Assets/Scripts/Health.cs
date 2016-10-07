@@ -10,6 +10,9 @@ public class Health : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if (health <= 0) {
+            Debug.Log(gameObject + " is destroyed with health below 0");
+            Destroy(gameObject);
+        }
 	}
 }

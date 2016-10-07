@@ -2,11 +2,12 @@
 using System.Collections;
 
 public class Base : MonoBehaviour {
-    public int fullHealth = 100;
     public Vector3 playerBasePosition = new Vector3(3.5f, -3.5f, 0);
     public Vector3 enemyBasePosition = new Vector3(-3.5f, 3.5f, 0);
+    public int money;
 	// Use this for initialization
 	void Start () {
+        money = 0;
         if (gameObject.GetComponent<Player>()) {
             gameObject.transform.position = playerBasePosition;
         } else {
@@ -18,10 +19,7 @@ public class Base : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (fullHealth <= 0) {
-            Destroy(gameObject);
-            gameObject.GetComponent<Player>().lose = true;
-        }
+
 	}
 
 
