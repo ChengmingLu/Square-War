@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class Hoosband : MonoBehaviour {
-    public Vector3 playerHoosbandPosition = new Vector3(2f, -3f, 0);
-    public Vector3 enemyHoosbandPosition = new Vector3(-2f, 3f, 0);
+    public Vector3 playerHoosbandPosition = new Vector3(-591f, -320.6f, 0);
+    public Vector3 enemyHoosbandPosition = new Vector3(-595f, -313.4f, 0);
 	// Use this for initialization
 	void Start () {
         if (gameObject.GetComponent<Player>()) {
@@ -13,8 +13,7 @@ public class Hoosband : MonoBehaviour {
             //Debug.Log("This hoosband is enemy");
             gameObject.transform.position = enemyHoosbandPosition;
         }
-        gameObject.GetComponent<Movable>().destination = gameObject.transform.position;
-        gameObject.GetComponent<Movable>().needToMove = false;
+        gameObject.GetComponent<Movable>().stablizePosition();
 	}
 	
 	// Update is called once per frame

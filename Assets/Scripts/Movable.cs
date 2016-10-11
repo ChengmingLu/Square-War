@@ -30,4 +30,8 @@ public class Movable : MonoBehaviour {
             //isMoving = false;
         }
 	}
+
+    public void stablizePosition() {
+        destination = gameObject.transform.position;
+    }
 }

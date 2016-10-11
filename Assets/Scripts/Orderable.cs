@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Collections;
 
 public class Orderable : MonoBehaviour {
-    public GameObject basePrefab;
+    //public GameObject basePrefab;
     public static GameObject selectedUnit;
     //private bool selected;
     private Vector3 mousPos, objPos2D;
@@ -33,8 +33,8 @@ public class Orderable : MonoBehaviour {
         }
 	}
     void OnMouseDown() {
-        selectedUnit = gameObject;
         //tempObject = gameObject;
+        selectedUnit = gameObject;
         Debug.Log("Selected unit assigned to " + selectedUnit);
     }
 }
