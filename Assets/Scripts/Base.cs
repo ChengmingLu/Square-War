@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class Base : MonoBehaviour {
-    public Vector3 playerBasePosition = new Vector3(3.5f, -3.5f, 0);
-    public Vector3 enemyBasePosition = new Vector3(-3.5f, 3.5f, 0);
+    public Vector3 playerBasePosition = new Vector3(370f, -370f, 0);
+    public Vector3 enemyBasePosition = new Vector3(-370f, 370f, 0);
     public int money;
+    public int totalAmmo;
 	// Use this for initialization
 	void Start () {
         money = 0;
@@ -13,7 +14,7 @@ public class Base : MonoBehaviour {
         } else {
             gameObject.transform.position = enemyBasePosition;
         }
-        gameObject.GetComponent<Movable>().destination = gameObject.transform.position;
+        gameObject.GetComponent<Movable>().stablizePosition();
 	    
 	}
 	

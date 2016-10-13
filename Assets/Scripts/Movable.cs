@@ -5,12 +5,11 @@ public class Movable : MonoBehaviour {
     public float speed;
     public Vector3 destination;
     private Vector3 moveThreshold = new Vector3(0.1f, 0.1f, 0);
-    public bool isMoving, needToMove;
+    public bool needToMove = false;
+    public bool reachedDestination = false;
 	// Use this for initialization
 	void Start () {
-        //isMoving = false;
-        needToMove = false;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,11 +22,11 @@ public class Movable : MonoBehaviour {
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(destination.x -
                 gameObject.transform.position.x, destination.y -
                 gameObject.transform.position.y).normalized * speed;
-            //isMoving = true;
+            reachedDestination = false;
         } else {
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
             //needToMove = false;
-            //isMoving = false;
+            reachedDestination = true;
         }
 	}
 

@@ -2,15 +2,15 @@
 using System.Collections;
 
 public class CameraControl : MonoBehaviour {
-    float cameraThreshold = 2f;
-    float cameraBoundary = 5f;
-    float cameraFoV = 2f;
-    float maxCameraFoV = 5f;
-    float minCameraFoV = 1f;
-    float scrollSensitivity = 1f;
+    float cameraThreshold = 20f;
+    float cameraBoundary = 400f;
+    float cameraFoV = 300f;
+    float maxCameraFoV = 550f;
+    float minCameraFoV = 200f;
+    float scrollSensitivity = 50f;
     Camera cam;
     //Camera cam;
-    float speed = 2f;
+    float speed = 200f;
     void Start () {
         cam = GameObject.FindObjectOfType<Camera>();
 	}

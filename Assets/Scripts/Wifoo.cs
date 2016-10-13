@@ -3,8 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class Wifoo : MonoBehaviour {
-    public Vector3 playerWifooPosition = new Vector3(-591f, -320f, 0);
-    public Vector3 enemyWifooPosition = new Vector3(-595f, -314f, 0);
+    public Vector3 playerWifooPosition = new Vector3(242f, -404f, 0);
+    public Vector3 enemyWifooPosition = new Vector3(-242f, 404f, 0);
     public bool canCollect;
     private bool needToReturnBase;
     public int resourceCollected;
