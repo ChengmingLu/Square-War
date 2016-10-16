@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class CameraControl : MonoBehaviour {
+    public float cameraFoV = 300f;
     float cameraThreshold = 20f;
     float cameraBoundary = 400f;
-    float cameraFoV = 300f;
     float maxCameraFoV = 550f;
     float minCameraFoV = 200f;
     float scrollSensitivity = 50f;

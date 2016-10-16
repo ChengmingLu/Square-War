@@ -66,12 +66,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AmmoDisplay.cs" />
     <Compile Include="Assets\Scripts\Base.cs" />
     <Compile Include="Assets\Scripts\CameraControl.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\Hoosband.cs" />
     <Compile Include="Assets\Scripts\LevelLoader.cs" />
+    <Compile Include="Assets\Scripts\MoneyDisplay.cs" />
     <Compile Include="Assets\Scripts\Movable.cs" />
     <Compile Include="Assets\Scripts\Orderable.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
@@ -79,9 +81,11 @@
     <Compile Include="Assets\Scripts\ProjectileSpawner.cs" />
     <Compile Include="Assets\Scripts\Resource.cs" />
     <Compile Include="Assets\Scripts\Test.cs" />
+    <Compile Include="Assets\Scripts\UnitSpawner.cs" />
     <Compile Include="Assets\Scripts\ViewRange.cs" />
     <Compile Include="Assets\Scripts\Wifoo.cs" />
     <Compile Include="Assets\Scripts\autoResourceToggle.cs" />
+    <Compile Include="Assets\Scripts\makeAmmo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

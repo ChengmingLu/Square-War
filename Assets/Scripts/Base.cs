@@ -6,6 +6,7 @@ public class Base : MonoBehaviour {
     public Vector3 enemyBasePosition = new Vector3(-370f, 370f, 0);
     public int money;
     public int totalAmmo;
+    public int maxAmmo;
 	// Use this for initialization
 	void Start () {
         money = 0;
@@ -15,7 +16,6 @@ public class Base : MonoBehaviour {
             gameObject.transform.position = enemyBasePosition;
         }
         gameObject.GetComponent<Movable>().stablizePosition();
-	    
 	}
 	
 	// Update is called once per frame

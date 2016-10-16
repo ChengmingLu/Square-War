@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour {
         if (colliderGameObject.GetComponent<Health>() && (colliderGameObject.GetComponent<Enemy>() && gameObject.GetComponent<Player>()
             || colliderGameObject.GetComponent<Player>() && gameObject.GetComponent<Enemy>())) {
             colliderGameObject.GetComponent<Health>().health -= damage;
-            Debug.Log("shit I hit something" + colliderGameObject);
+            Debug.Log("shit I hit something : " + colliderGameObject);
             Destroy(gameObject);
         }
     }   

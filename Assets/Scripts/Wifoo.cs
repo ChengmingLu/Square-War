@@ -3,8 +3,8 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class Wifoo : MonoBehaviour {
-    public Vector3 playerWifooPosition = new Vector3(242f, -404f, 0);
-    public Vector3 enemyWifooPosition = new Vector3(-242f, 404f, 0);
+    //public Vector3 playerWifooPosition = new Vector3(242f, -404f, 0);
+    //public Vector3 enemyWifooPosition = new Vector3(-242f, 404f, 0);
     public bool canCollect;
     private bool needToReturnBase;
     public int resourceCollected;
@@ -20,19 +20,12 @@ public class Wifoo : MonoBehaviour {
         canCollect = false;
         resourceCollected = 0;
         if (gameObject.GetComponent<Player>()) {
-            //Debug.Log("This wifoo is player");
-            gameObject.transform.position = playerWifooPosition;
-        } else {
-            //Debug.Log("This wifoo is enemy");
-            gameObject.transform.position = enemyWifooPosition;
-        }
-        //Debug.Log("trying to find base");
-        if (gameObject.GetComponent<Player>()) {
+            //gameObject.transform.position = playerWifooPosition;
             baseObject = GameObject.FindGameObjectWithTag("PlayerBase");
         } else {
+            //gameObject.transform.position = enemyWifooPosition;
             baseObject = GameObject.FindGameObjectWithTag("EnemyBase");
         }
-        //Debug.Log("What we found was " + baseObject);
         gameObject.GetComponent<Movable>().stablizePosition();
     }
     // Update is called once per frame
@@ -78,10 +71,15 @@ public class Wifoo : MonoBehaviour {
                 gameObject.GetComponent<Movable>().stablizePosition();
             }
         }
-        if (colliderObject.GetComponent<Base>()) {
+        if (colliderObject == baseObject) {
             Debug.Log("wifoo returned to its corresponding base and is out for resources");
             if (resourceCollected > 0) {
                 colliderObject.GetComponent<Base>().money += resourceCollected;
+                if (baseObject.GetComponentInChildren<MoneyDisplay>()) {
+                    baseObject.GetComponentInChildren<MoneyDisplay>().updateDisplay();
+                } else {
+                    Debug.LogWarning("could not display update on " + baseObject);
+                }
                 resourceCollected = 0;
             }
             gameObject.GetComponent<Movable>().destination = getnearestResource().transform.position;
